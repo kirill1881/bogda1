@@ -3,7 +3,7 @@
 }
 
 .buy-robux {
-  padding-top: 632px;
+  padding-top: 1px;
   padding-bottom: 654px;
 }
 
@@ -552,8 +552,8 @@
 
 @media (max-width: 1840px) {
   .buy-robux {
-    padding-top: 34.347vw;
-    padding-bottom: 35.534vw;
+    padding-top: 2.347vw;
+    padding-bottom: 2.534vw;
   }
   .buy-robux-item-method {
     padding-top: 0.326vw;

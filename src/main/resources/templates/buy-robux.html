@@ -27,10 +27,10 @@
             />Bogdashka</a
             >
         </div>
-        <ul class="menu">
+        <ul class="menu" th:each="d : ${list}">
             <li><a class="menu-item" href="">Конкурсы</a></li>
-            <li><a class="menu-item" href="/buy.html">Мои покупки</a></li>
-            <li><a class="menu-item" href="">250₽-1000R$</a></li>
+            <li><a class="menu-item" href="/buy.html">Мои покупок</a></li>
+            <li><h5 class="menu-item" th:text="${d.getCourse}"></h5></li>
         </ul>
         <a href="/buy-methods" class="button-red">
             <img src="../static/img/btn-logo.png"  th:src="@{/img/btn-logo.png}" alt="" />

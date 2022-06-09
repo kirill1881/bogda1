@@ -269,7 +269,7 @@ body {
   display: flex;
   justify-content: center;
   cursor: pointer;
-  margin-top: 880px;
+  margin-top: 80px;
 }
 
 .buy-robux-item-method {
@@ -750,7 +750,7 @@ body {
     font-size: 1.956vw;
   }
   .buy-robux-items {
-    margin-top: 47.826vw;
+    margin-top: 0.1vw;
   }
   .buy-robux-item-method {
     padding-top: 0.326vw;
@@ -1046,8 +1046,8 @@ body {
     height: 3.733vw;
   }
   .buy-robux-items {
-    margin-bottom: 7.466vw;
-    margin-top: 91.2vw;
+    margin-bottom: 0.466vw;
+    margin-top: 0.2vw;
     position: relative;
     z-index: 2;
   }
