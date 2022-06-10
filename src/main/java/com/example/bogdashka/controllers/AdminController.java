@@ -15,7 +15,7 @@ import org.springframework.web.servlet.view.RedirectView;
 public class AdminController {
     @GetMapping
     public String getMainPage(){
-        return "index";
+        return "indexx";
     }
     @Autowired
     DataRepo dataRepo;
