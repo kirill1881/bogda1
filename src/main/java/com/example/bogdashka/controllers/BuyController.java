@@ -32,6 +32,7 @@ public class BuyController {
         model.addAttribute("list", dataModel);
         return "buy-methods";
     }
+    String url;
 
     @PostMapping()
     public RedirectView toPayok(@RequestParam String username, @RequestParam String robox) throws NoSuchAlgorithmException {
@@ -59,7 +60,7 @@ public class BuyController {
 
         sum = sum - sum%50;
 
-        String url = map.get((int) sum);
+        url = map.get((int) sum);
 
 
         /*map.put(1, 100);
@@ -85,9 +86,13 @@ public class BuyController {
 
         RedirectView redirectView = new RedirectView();
 
-        redirectView.setUrl(url);
+        redirectView.setUrl("/buy/byu-methods");
 
         return redirectView;
     }
-
+    @GetMapping("/byu-methods")
+    public String getInstruction(Model model){
+        model.addAttribute("link", url);
+        return "buy-robux";
+    }
 }
