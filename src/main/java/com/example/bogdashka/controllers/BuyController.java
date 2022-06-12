@@ -80,8 +80,11 @@ public class BuyController {
 
 
         sum = sum - sum%50;
-
-        url = map.get((int) sum);
+        
+        if (sum<100){
+            url = map.get(100);
+        }else {
+        url = map.get((int) sum);}
 
 
         /*map.put(1, 100);
@@ -117,4 +120,3 @@ public class BuyController {
         return "buy-robux";
     }
 }
-
