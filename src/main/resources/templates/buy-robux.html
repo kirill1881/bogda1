@@ -27,10 +27,10 @@
             />Bogdashka</a
             >
         </div>
-        <ul class="menu" th:each="d : ${list}">
+        <ul class="menu" >
             <li><a class="menu-item" href="">Конкурсы</a></li>
             <li><a class="menu-item" href="/buy.html">Мои покупок</a></li>
-            <li><h5 class="menu-item" th:text="${d.getCourse}"></h5></li>
+            <li><h5 class="menu-item"></h5></li>
         </ul>
         <a href="/buy-methods" class="button-red">
             <img src="../static/img/btn-logo.png"  th:src="@{/img/btn-logo.png}" alt="" />
@@ -42,35 +42,35 @@
     <h2>Выберите один из методов</h2>
     <div class="robux-modal-paymethod-item-row">
         <a href="">
-            <img src="img/paymethod1.png" alt="" />
+            <img  src="../static/img/paymethod1.png" alt="" />
         </a>
         <a href="">
-            <img src="img/paymethod7.png" alt="" />
-        </a>
-    </div>
-    <div class="robux-modal-paymethod-item-row">
-        <a href="">
-            <img src="img/paymethod2.png" alt="" />
+            <img src="/img/paymethod7.png" th:src="@{/img/paymethod7.png}" alt="" />
         </a>
     </div>
     <div class="robux-modal-paymethod-item-row">
         <a href="">
-            <img src="img/paymethod3.png" alt="" />
+            <img src="/img/paymethod2.png" th:src="@{/img/paymethod7.png}" alt="" />
         </a>
     </div>
     <div class="robux-modal-paymethod-item-row">
         <a href="">
-            <img src="img/paymethod4.png" alt="" />
+            <img src="/img/paymethod3.png" alt="" />
         </a>
     </div>
     <div class="robux-modal-paymethod-item-row">
         <a href="">
-            <img src="img/paymethod5.png" alt="" />
+            <img src="/img/paymethod4.png" alt="" />
         </a>
     </div>
     <div class="robux-modal-paymethod-item-row">
         <a href="">
-            <img src="img/paymethod6.png" alt="" />
+            <img src="/img/paymethod5.png" alt="" />
+        </a>
+    </div>
+    <div class="robux-modal-paymethod-item-row">
+        <a href="">
+            <img src="/img/paymethod6.png" alt="" />
         </a>
     </div>
 </div>
@@ -79,7 +79,7 @@
         <div class="buy-robux-item-method">
             <div class="buy-robux-item-method-titel">Групповой метод</div>
             <div class="buy-robux-item-method-info">
-                <img src="img/buy-robux-method-users.png" alt="" />
+                <img src="/img/buy-robux-method-users.png" th:src="@{/buy-robux-method-users.png}"alt="" />
                 <div class="buy-robux-item-method-info-text">
                     <div class="buy-robux-item-method-info-text-one">1₽=2R$</div>
                     <div class="buy-robux-item-method-info-text-two">Доступно:</div>
@@ -94,7 +94,7 @@
         <div class="buy-robux-item-transfer">
             <div class="buy-robux-item-transfer-titel">Трансфер</div>
             <div class="buy-robux-item-transfer-info">
-                <img src="img/buy-robux-transfer.png" alt="" />
+                <img src="/img/buy-robux-transfer.png" alt="" />
                 <div class="buy-robux-item-transfer-info-text">
                     <div class="buy-robux-item-transfer-info-text-one">1₽=1.58R$</div>
                     <div class="buy-robux-item-transfer-info-text-two">Доступно:</div>
@@ -109,7 +109,7 @@
         <div class="buy-robux-item-logpass">
             <div class="buy-robux-item-logpass-titel">Log+Pass</div>
             <div class="buy-robux-item-logpass-info">
-                <img src="img/buy-robux-logpass.png" alt="" />
+                <img src="/img/buy-robux-logpass.png" alt="" />
                 <div class="buy-robux-item-logpass-info-text">
                     <div class="buy-robux-item-logpass-info-text-one">1₽=1.86R$</div>
                     <div class="buy-robux-item-logpass-info-text-two">Доступно:</div>
@@ -125,37 +125,37 @@
     <div class="buy-robux-banner">
         <div class="buy-robux-banner-inner">
             <div class="buy-robux-banner-one">
-                <img src="img/buy-robux-banner-1-icon.png" alt="" />
+                <img src="/img/buy-robux-banner-1-icon.png" alt="" />
                 <p>
                     Перейти в настройки своего Place по кнопке "Перейти на Place".
                     Затем войти в раздел "Access" в левом списке
                 </p>
             </div>
             <div class="buy-robux-banner-two">
-                <img src="img/configure place.png" alt="" />
+                <img src="/img/configure place.png" alt="" />
                 <div class="buy-robux-banner-two-btn">
                     <a class="buy-robux-banner-two-btn-inner" href="https://www.roblox.com/games/9818761230/zkol0201s-Place" >Перейти на place</a>
 
                 </div>
             </div>
             <div class="buy-robux-banner-three">
-                <img src="img/buy-robux-banner-3-icon.png" alt="" />
+                <img src="/img/buy-robux-banner-3-icon.png" alt="" />
                 <p>Прокрутить в САМЫЙ НИЗ страницы "Access"</p>
             </div>
             <div class="buy-robux-banner-four">
                 <img
                         class="buy-robux-banner-four-img-1"
-                        src="img/buy-robux-banner-mechanic-icon.png"
+                        src="/img/buy-robux-banner-mechanic-icon.png"
                         alt=""
                 />
                 <img
                         class="buy-robux-banner-four-img-2"
-                        src="img/allow private.png"
+                        src="/img/allow private.png"
                         alt=""
                 />
             </div>
             <div class="buy-robux-banner-five">
-                <img src="img/buy-robux-banner-5-icon.png" alt="" />
+                <img src="/img/buy-robux-banner-5-icon.png" alt="" />
                 <p>
                     Поставить галочку напротив "Allow Private Servers", если она ещё
                     не стоит и установить цену, указанную ниже. Далее нажать кнопку
@@ -165,11 +165,11 @@
             <div class="buy-robux-banner-six">
                 <div class="buy-robux-banner-six-left">
                     <div class="buy-banner-six-left-item-1">
-                        <img src="img/buy-robux-banner-six-info-icon.png" alt="" />
+                        <img src="/img/buy-robux-banner-six-info-icon.png" alt="" />
                         <p>Установите цену на 121 R$</p>
                     </div>
                     <div class="buy-banner-six-left-item-2">
-                        <img src="img/buy-robux-banner-six-info-icon.png" alt="" />
+                        <img src="/img/buy-robux-banner-six-info-icon.png" alt="" />
                         <p>
                             Если Вам высвечиваются красные таблички, просто проигнорируйте
                             их. Не забудьте нажать кнопку "Save", чтобы сохранить
@@ -177,7 +177,7 @@
                         </p>
                     </div>
                     <div class="buy-banner-six-left-item-3">
-                        <img src="img/check-square.png" alt="" />
+                        <img src="/img/check-square.png" alt="" />
                         <a href=""
                         >Я подтверждаю, что установил(а) цену Place на 1211 R$ и
                             сохранил(а) <br />данные настройки, чтобы получить 848 R$ на
@@ -186,7 +186,7 @@
                     </div>
                 </div>
                 <div class="buy-robux-banner-six-right">
-                    <img src="img/buy-robux-banner-six.png" alt="" />
+                    <img src="/img/buy-robux-banner-six.png" alt="" />
                 </div>
             </div>
             <a
@@ -202,16 +202,16 @@
         <img class="buy-robux-banner-hero-2" src="img/hero_2.png" alt="" />
         <img
                 class="buy-robux-banner-figure-right"
-                src="img/robux-favorable-conditions-figure-img.png"
+                src="/img/robux-favorable-conditions-figure-img.png"
         />
         <img
                 class="buy-robux-banner-figure-right-2"
-                src="img/robux-figure-questions.png"
+                src="/img/robux-figure-questions.png"
                 alt=""
         />
         <img
                 class="buy-robux-banner-figure-right-3"
-                src="img/buy-robux-figure-right-3.png"
+                src="/img/buy-robux-figure-right-3.png"
                 alt=""
         />
         <img class="vector-1" src="img/Vector 1.png" alt="" />
@@ -219,11 +219,11 @@
 </div>
 <div class="robux-footer">
     <div class="robux-footer-inner">
-        <a href=""><img src="img/youtube-icon.png" alt="" /></a>
-        <a href=""><img src="img/vk-icon.png" alt="" /></a>
-        <a href=""><img src="img/instagram-icon.png" alt="" /></a>
-        <a href=""><img src="img/twitter-icon.png" alt="" /></a>
-        <a href=""><img src="img/tiktok-icon.png" alt="" /></a>
+        <a href=""><img src="/img/youtube-icon.png" alt="" /></a>
+        <a href=""><img src="/img/vk-icon.png" alt="" /></a>
+        <a href=""><img src="/img/instagram-icon.png" alt="" /></a>
+        <a href=""><img src="/img/twitter-icon.png" alt="" /></a>
+        <a href=""><img src="/img/tiktok-icon.png" alt="" /></a>
     </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -231,3 +231,4 @@
 <script src="js/buy-robux.js"></script>
 </body>
 </html>
+
