@@ -36,8 +36,28 @@ public class BuyController {
 
     @PostMapping()
     public RedirectView toPayok(@RequestParam String username, @RequestParam String robox) throws NoSuchAlgorithmException {
+        DataModel dataModel = new DataModel();
+        long id = 1;
+        List<DataModel> list = dataRepo.findAll();
+        dataModel = list.get(0);
+
+        String str = dataModel.getCourse();
+        char[] ch = str.toCharArray();
+        int indRub= 0 , intRob = 0, intSign = 0;
+        for (int i = 0; i < ch.length; i++) {
+            if (ch[i]=='₽')
+                indRub = i;
+            if (ch[i]=='R')
+                intRob = i;
+        }
+        String strRub, StrRob;
+        strRub = str.substring(1,indRub);
+        StrRob = str.substring(indRub+2, intRob);
+
+        int course = Integer.valueOf(strRub)/Integer.valueOf(StrRob);
+
         double amount = Double.parseDouble(robox);
-        double sum = amount/(0.7*4);
+        double sum = amount/(0.7*course);
         map.put(100, "https://payok.io/payment_link/f8944-3fth9-2lc7n");
         map.put(150,  "https://payok.io/payment_link/t5174-6zeko-6v35l");
         map.put(200, "https://payok.io/payment_link/alk9r-3i5oe-cjz0c");
@@ -57,6 +77,7 @@ public class BuyController {
         map.put(900, "https://payok.io/payment_link/d0cf5-rgnwt-ne9z6");
         map.put(950, "https://payok.io/payment_link/674bl-o0xiv-iix80");
         map.put(1000, "https://payok.io/payment_link/xz6gr-ko888-et0l0");
+
 
         sum = sum - sum%50;
 
@@ -96,3 +117,4 @@ public class BuyController {
         return "buy-robux";
     }
 }
+
