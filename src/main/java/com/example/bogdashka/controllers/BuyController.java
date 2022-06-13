@@ -26,6 +26,7 @@ public class BuyController {
 
     @Autowired
     DataRepo dataRepo;
+
     @GetMapping
     public String getBuyPage(Model model){
         List<DataModel> dataModel =  dataRepo.findAll();
@@ -54,7 +55,7 @@ public class BuyController {
         strRub = str.substring(1,indRub);
         StrRob = str.substring(indRub+2, intRob);
 
-        int course = Integer.valueOf(strRub)/Integer.valueOf(StrRob);
+        int course = Integer.valueOf(StrRob)/Integer.valueOf(strRub);
 
         double amount = Double.parseDouble(robox);
         double sum = amount/(0.7*course);
@@ -80,11 +81,15 @@ public class BuyController {
 
 
         sum = sum - sum%50;
-        
-        if (sum<100){
+
+        if (sum<100 && sum>0){
             url = map.get(100);
+        }
+        else if (sum>1000) {
+            url = map.get(1000);
         }else {
-        url = map.get((int) sum);}
+        url = map.get((int) sum);
+        }
 
 
         /*map.put(1, 100);
@@ -120,3 +125,4 @@ public class BuyController {
         return "buy-robux";
     }
 }
+
