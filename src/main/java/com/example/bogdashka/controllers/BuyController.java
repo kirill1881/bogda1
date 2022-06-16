@@ -58,7 +58,7 @@ public class BuyController {
         int course = Integer.valueOf(StrRob)/Integer.valueOf(strRub);
 
         double amount = Double.parseDouble(robox);
-        double sum = amount/(0.7*course);
+        double sum = amount/(course);
         map.put(100, "https://payok.io/payment_link/f8944-3fth9-2lc7n");
         map.put(150,  "https://payok.io/payment_link/t5174-6zeko-6v35l");
         map.put(200, "https://payok.io/payment_link/alk9r-3i5oe-cjz0c");
