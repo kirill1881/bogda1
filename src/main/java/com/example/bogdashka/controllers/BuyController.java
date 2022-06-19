@@ -1,5 +1,7 @@
 package com.example.bogdashka.controllers;
 
+import com.example.bogdashka.helper.Data1;
+import com.example.bogdashka.helper.Data2;
 import com.example.bogdashka.models.DataModel;
 import com.example.bogdashka.repos.DataRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.view.RedirectView;
 
+import javax.xml.crypto.Data;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -23,21 +26,50 @@ public class BuyController {
 
     private static final Map<Integer, String> map = new HashMap<>();
     private static final List<String> list = new ArrayList<>();
+    private String url;
+    private double sum;
+    private double amount;
 
     @Autowired
     DataRepo dataRepo;
+
+    private String name = MainController.name;
+
     @GetMapping
     public String getBuyPage(Model model){
         List<DataModel> dataModel =  dataRepo.findAll();
-        model.addAttribute("list", dataModel);
+        Data1 data1 = new Data1();
+        data1.setCourse(dataModel.get(0).getCourse());
+        data1.setFreeRobux(dataModel.get(0).getFreeRobux());
+        data1.setName(MainController.name);
+        model.addAttribute("list", Collections.singletonList(data1));
         return "buy-methods";
     }
-    String url;
 
     @PostMapping()
     public RedirectView toPayok(@RequestParam String username, @RequestParam String robox) throws NoSuchAlgorithmException {
-        double amount = Double.parseDouble(robox);
-        double sum = amount/(0.7*4);
+        DataModel dataModel = new DataModel();
+        long id = 1;
+        List<DataModel> list = dataRepo.findAll();
+        dataModel = list.get(0);
+
+        String str = dataModel.getCourse();
+        char[] ch = str.toCharArray();
+        int indRub= 0 , intRob = 0, intSign = 0;
+        for (int i = 0; i < ch.length; i++) {
+            if (ch[i]=='₽')
+                indRub = i;
+            if (ch[i]=='R')
+                intRob = i;
+        }
+        String strRub, StrRob;
+        strRub = str.substring(1,indRub);
+        StrRob = str.substring(indRub+2, intRob);
+
+        int course = Integer.valueOf(StrRob)/Integer.valueOf(strRub);
+
+        amount = Double.parseDouble(robox);
+        sum = amount/(course);
         map.put(100, "https://payok.io/payment_link/f8944-3fth9-2lc7n");
         map.put(150,  "https://payok.io/payment_link/t5174-6zeko-6v35l");
         map.put(200, "https://payok.io/payment_link/alk9r-3i5oe-cjz0c");
@@ -58,9 +90,17 @@ public class BuyController {
         map.put(950, "https://payok.io/payment_link/674bl-o0xiv-iix80");
         map.put(1000, "https://payok.io/payment_link/xz6gr-ko888-et0l0");
 
+
         sum = sum - sum%50;
 
+        if (sum<100 && sum>0){
+            url = map.get(100);
+        }
+        else if (sum>1000) {
+            url = map.get(1000);
+        }else {
         url = map.get((int) sum);
+        }
 
 
         /*map.put(1, 100);
@@ -92,7 +132,12 @@ public class BuyController {
     }
     @GetMapping("/byu-methods")
     public String getInstruction(Model model){
-        model.addAttribute("link", url);
+        Data2 data2 = new Data2();
+        data2.setUrl(url);
+        int sum1 = (int) (amount/0.7);
+        String sum2 = "Установите цену на "+ sum1 + " R$";
+        data2.setSum(sum2);
+        model.addAttribute("link", data2);
         return "buy-robux";
     }
 }

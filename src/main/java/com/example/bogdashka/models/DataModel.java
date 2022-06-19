@@ -14,6 +14,18 @@ public class DataModel {
     @Id
     long id = 1;
 
+    public long getId() {
+        return id;
+    }
+
+    public String getFreeRobux() {
+        return freeRobux;
+    }
+
+    public String getCourse() {
+        return course;
+    }
+
     @Column(name = "free_robux")
     String freeRobux;
 

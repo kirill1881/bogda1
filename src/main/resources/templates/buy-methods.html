@@ -207,12 +207,12 @@
               <input type="text" placeholder="Промокод(если есть)" />
             </div>
           </div>
-          <div class="buy-form-field">
+          <div class="buy-form-field" th:each="d : ${list}">
             <img src="img/user-icon.png" alt="" class="buy-form-input-icon" />
             <input
               type="text"
               name="username"
-              placeholder="ввдеите никнэйм(username)"
+              th:value="${d.getName()}"
             />
             <span class="error">Заполните поле</span>
           </div>
