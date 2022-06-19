@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html xmlns:th="http:/www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"
+    />
+    <link href="../static/css/reset.css" th:href="@{/reset.css}" rel="stylesheet" />
+    <link href="../static/css/fonts.css" th:href="@{/fonts.css}" rel="stylesheet" />
+    <link href="../static/css/main.css" th:href="@{/main.css}" rel="stylesheet" />
+    <link href="../static/css/header.css" th:href="@{/header.css}" rel="stylesheet" />
+    <link href="../static/css/footer.css" th:href="@{/footer.css}" rel="stylesheet" />
+</head>
+<body>
+<header>
+    <nav>
+        <div class="logo">
+            <a href=""
+            ><img src="img/logo.png" alt="" class="logo-desc" /><img
+                    src="img/logo-mob.png"
+                    alt=""
+                    class="logo-mob"
+            />Bogdashka</a
+            >
+        </div>
+        <ul class="menu" th:each="d : ${list}">
+            <li><a class="menu-item" href="">Конкурсы</a></li>
+            <li><a class="menu-item" href="/buy.html">Мои покупок</a></li>
+            <li><h5 class="menu-item" th:text="${d.getCourse}"></h5></li>
+        </ul>
+        <a href="/buy" class="button-red">
+            <img src="img/btn-logo.png" alt="" />
+            Купить РОБУКСЫ
+        </a>
+    </nav>
+</header>
+<div class="robux-main-bg-mob">
+    <img src="img/main-bg-mob.png" alt="" />
+</div>
+<div class="robux-favorable-conditions">
+    <div
+            class="robux-favorable-conditions-item robux-favorable-conditions-item-2"
+    >
+        <img
+                class="robux-favorable-conditions-item-hero-img"
+                src="img/hero-img-1.png"
+                alt=""
+        />
+        <div class="robux-favorable-conditions-item-content">
+            <div class="robux-favorable-conditions-item-title">
+                Робуксы по самым выгодным условиям
+            </div>
+            <a
+                    href="/buy"
+                    class="robux-favorable-conditions-item-btn-robux"
+            >
+                Купить Робуксы
+            </a>
+        </div>
+        <div class="robux-favorable-conditions-item-btns">
+            <div class="robux-favorable-conditions-item-form">
+                <div class="robux-favorable-conditions-item-form-title">
+                    <img src="img/robux-favorable-conditions-btn-img-3.png" alt="" />
+                    Трансфер
+                </div>
+                <form method="post" class="robux-favorable-conditions-item-form-wrap">
+                    <div class="robux-favorable-conditions-item-form-left">
+                        <input name="name" type="text" placeholder="введите никнейм" />
+                        <a
+                                data-fancybox="gallery"
+                                href="https://www.youtube.com/watch?v=LXb3EKWsInQ&t=34s"
+                        ><img src="img/youtube-img.png" alt=""
+                        /></a>
+                    </div>
+                    <div class="robux-favorable-conditions-item-form-right">
+                        <div
+                                class="robux-favorable-conditions-item-form-radioinput-wrap"
+                        >
+                            <div
+                                    class="robux-favorable-conditions-item-form-radioinput-title"
+                            >
+                                <img src="img/robucs-valute.png" alt="" />
+                                вы получаете
+                            </div>
+                            <div class="robux-favorable-conditions-item-form-radioinput">
+                                <div
+                                        class="robux-favorable-conditions-item-form-radioinput-dotnum"
+                                >
+                                    <div
+                                            class="robux-favorable-conditions-item-form-radioinput-num"
+                                    >
+                                        50
+                                    </div>
+                                    <div
+                                            class="robux-favorable-conditions-item-form-radioinput-dot"
+                                    ></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                                class="robux-favorable-conditions-item-form-radioinput-wrap"
+                        >
+                            <div
+                                    class="robux-favorable-conditions-item-form-radioinput-title ruble"
+                            >
+                                <img src="img/ruble-valute.png" alt="" />
+                                вы платите
+                            </div>
+                            <div
+                                    class="robux-favorable-conditions-item-form-radioinput green"
+                            >
+                                <div
+                                        class="robux-favorable-conditions-item-form-radioinput-dotnum"
+                                >
+                                    <div
+                                            class="robux-favorable-conditions-item-form-radioinput-num"
+                                    >
+                                        100
+                                    </div>
+                                    <div
+                                            class="robux-favorable-conditions-item-form-radioinput-dot"
+                                    ></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="robux-favorable-conditions-item-form-card">
+                            <div class="robux-favorable-conditions-item-form-card-dot">
+                                <img src="img/check-icon.png" alt="" />
+                            </div>
+                            <div class="robux-favorable-conditions-item-form-card-text">
+                                Qiwi
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                            class="robux-favorable-conditions-item-form-button"
+                            data-method="transfer"
+                    >
+
+                        <button type="submit" class="robux-favorable-conditions-item-form-button-inner" href="/buy" >
+                            Подтвердить и купить робуксы
+                        </button>
+
+                    </div>
+                </form>
+            </div>
+            <div class="robux-favorable-conditions-item-form mob">
+                <div class="robux-favorable-conditions-item-form-title">
+                    <img src="img/robux-favorable-conditions-btn-img-1.png" alt="" />
+                    Групповой метод
+                </div>
+                <div class="robux-favorable-conditions-item-form-left">
+                    <input type="text" placeholder="введите никнейм" />
+                </div>
+                <div class="robux-favorable-conditions-item-form-wrap">
+                    <div class="robux-favorable-conditions-item-form-left-mob">
+                        <div
+                                class="robux-favorable-conditions-item-form-radioinput-wrap"
+                        >
+                            <div
+                                    class="robux-favorable-conditions-item-form-radioinput-title"
+                            >
+                                вы получаете
+                            </div>
+                            <div
+                                    class="robux-favorable-conditions-item-form-radioinput-container"
+                            >
+                                <img src="img/robucs-valute.png" alt="" />
+                                <div
+                                        class="robux-favorable-conditions-item-form-radioinput"
+                                >
+                                    <div
+                                            class="robux-favorable-conditions-item-form-radioinput-dotnum"
+                                    >
+                                        <div
+                                                class="robux-favorable-conditions-item-form-radioinput-num"
+                                        >
+                                            50
+                                        </div>
+                                        <div
+                                                class="robux-favorable-conditions-item-form-radioinput-dot"
+                                        ></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                                class="robux-favorable-conditions-item-form-radioinput-wrap"
+                        >
+                            <div
+                                    class="robux-favorable-conditions-item-form-radioinput-title ruble"
+                            >
+                                вы платите
+                            </div>
+                            <div
+                                    class="robux-favorable-conditions-item-form-radioinput-container green"
+                            >
+                                <img src="img/ruble-valute.png" alt="" />
+                                <div
+                                        class="robux-favorable-conditions-item-form-radioinput green"
+                                >
+                                    <div
+                                            class="robux-favorable-conditions-item-form-radioinput-dotnum"
+                                    >
+                                        <div
+                                                class="robux-favorable-conditions-item-form-radioinput-num"
+                                        >
+                                            100
+                                        </div>
+                                        <div
+                                                class="robux-favorable-conditions-item-form-radioinput-dot"
+                                        ></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="robux-favorable-conditions-item-form-right">
+                        <div class="robux-favorable-conditions-item-form-card">
+                            <div class="robux-favorable-conditions-item-form-card-dot">
+                                <img src="img/check-icon.png" alt="" />
+                            </div>
+                            <div class="robux-favorable-conditions-item-form-card-text">
+                                Qiwi
+                            </div>
+                        </div>
+                        <div class="robux-favorable-conditions-item-form-button">
+                            <div
+                                    class="robux-favorable-conditions-item-form-button-inner"
+                            >
+                                Купить
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img
+                        class="robux-favorable-conditions-item-form-video-mob"
+                        src="img/youtube-img.png"
+                        alt=""
+                />
+            </div>
+        </div>
+        <img
+                class="robux-favorable-conditions-figure-img"
+                src="img/robux-favorable-conditions-figure-img.png"
+                alt=""
+        />
+    </div>
+    <img
+            class="robux-main-vector-1"
+            src="img/robux-main-vector-1.png"
+            alt=""
+    />
+</div>
+<div class="robux-info">
+    <div class="robux-info-items">
+        <div class="robux-info-item">
+            <img src="img/robux-info-item-img-1.png" alt="" />
+            <div class="robux-info-item-title">Лучшая цена</div>
+            <div class="robux-info-item-text">
+                <p>Мы продаем робуксы по самой выгодной цене на рынке</p>
+            </div>
+        </div>
+        <div class="robux-info-item">
+            <img src="img/robux-info-item-img-2.png" alt="" />
+            <div class="robux-info-item-title">Безопастность</div>
+            <div class="robux-info-item-text">
+                <p>Мы работаем официально и дорожим нашей репутацией</p>
+            </div>
+        </div>
+        <div class="robux-info-item">
+            <img src="img/robux-info-item-img-3.png" alt="" />
+            <div class="robux-info-item-title">Скорость</div>
+            <div class="robux-info-item-text">
+                <p>Не надо ждать! Робуксы мгновенно появятся у тебя</p>
+            </div>
+        </div>
+    </div>
+    <img
+            class="robux-info-figure-img"
+            src="img/robux-info-figure-img.png"
+            alt=""
+    />
+    <img class="robux-info-img" src="img/hero2.png" alt="" />
+</div>
+<div class="robux-our-statistics">
+    <div class="robox-our-statistics-title">Наша статистика</div>
+    <div class="robux-our-statistics-items">
+        <div class="robox-our-statistics-item">
+            <div class="robox-our-statistics-item-num">156</div>
+            <div class="robox-our-statistics-item-title">Онлайн на сайте</div>
+            <div class="robux-our-statistics-graphic">
+                <div class="robux-our-statistics-graphic-white"></div>
+            </div>
+        </div>
+        <div class="robox-our-statistics-item" th:each="d : ${list}">
+            <div class="robox-our-statistics-item-num" th:text="${d.getFreeRobux}"></div>
+            <div class="robox-our-statistics-item-title">Доступно сейчас</div>
+            <div class="robux-our-statistics-graphic-red">
+                <div class="robux-our-statistics-graphic-white-2"></div>
+            </div>
+        </div>
+        <div class="robox-our-statistics-item">
+            <div class="robox-our-statistics-item-num">2.897.126 R$</div>
+            <div class="robox-our-statistics-item-title">
+                Продано за все время
+            </div>
+            <div class="robux-our-statistics-graphic-yellow">
+                <div class="robux-our-statistics-graphic-white-3"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="robux-reviews">
+    <div class="robux-reviews-info">
+        <div class="robux-reviews-info-title">Отзывы</div>
+        <div class="robux-reviews-info-text">
+            Реальные отзывы о работе нашего сервиса от реальных людей
+        </div>
+        <img
+                class="robux-reviews-info-youtube-img"
+                src="img/robux-reviews-youtube-img.png"
+                alt=""
+        />
+        <img class="robux-reviews-info-hero" src="img/hero3.png" alt="" />
+    </div>
+    <img
+            class="robux-main-vector-2"
+            src="img/robux-main-vector-2.png"
+            alt=""
+    />
+</div>
+<div class="robux-questions">
+    <div class="robux-questions-info">
+        <div class="robux-questions-info-title">Остались вопросы?</div>
+        <div class="robux-questions-info-subtitle">мы всегда на связи</div>
+        <div class="robux-questions-info-button">
+            <img
+                    class="robux-questions-info-btn"
+                    src="img/message-circle.png"
+                    alt=""
+            />
+            <p>Тех.Поддержка</p>
+        </div>
+    </div>
+    <img class="robux-questions-img" src="img/hero4.png" alt="" />
+    <img
+            class="robux-main-vector-3"
+            src="img/robux-main-vector-3.png"
+            alt=""
+    />
+    <img
+            class="robux-main-vector-4"
+            src="img/robux-main-vector-4.png"
+            alt=""
+    />
+    <img
+            class="robux-figure-questions"
+            src="img/robux-figure-questions.png"
+            alt=""
+    />
+</div>
+<footer>
+    <div class="robux-footer">
+        <div class="robux-footer-inner">
+            <a href=""><img src="img/youtube-icon.png" alt="" /></a>
+            <a href=""><img src="img/vk-icon.png" alt="" /></a>
+            <a href=""><img src="img/instagram-icon.png" alt="" /></a>
+            <a href=""><img src="img/twitter-icon.png" alt="" /></a>
+            <a href=""><img src="img/tiktok-icon.png" alt="" /></a>
+        </div>
+    </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script src="js/method.js"></script>
+</body>
+</html>
