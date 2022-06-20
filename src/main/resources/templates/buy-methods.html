@@ -30,10 +30,10 @@
         </div>
         <ul class="menu" th:each="d : ${list}">
           <li><a class="menu-item" href="">Конкурсы</a></li>
-          <li><a class="menu-item" href="/buy.html">Мои покупок</a></li>
+          <li><a class="menu-item" href="/mylist">Мои покупки</a></li>
           <li><h5 class="menu-item" th:text="${d.getCourse}"></h5></li>
         </ul>
-        <a href="/buy-transfer.html" class="button-red">
+        <a href="/buy" class="button-red">
           <img src="img/btn-logo.png" alt="" />
           Купить РОБУКСЫ
         </a>
