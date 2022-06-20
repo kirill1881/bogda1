@@ -15,7 +15,7 @@ body {
 .buy-form-inner {
   width: 1192px;
   border-radius: 50px;
-  background-image: url(../img/buy-form-bg.png);
+  background-image: url(/img/buy-form-bg.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -108,7 +108,7 @@ body {
   font-weight: 500;
 }
 
-.buy-form-field input:placeholder {
+.buy-form-field input.placeholder {
   color: rgba(255, 255, 255, 0.65);
   font-size: 36px;
   line-height: 1.166;
@@ -187,7 +187,7 @@ body {
   text-align: center;
 }
 
-.buy-form-eq-field input:placeholder {
+.buy-form-eq-field input.placeholder {
   color: rgba(255, 255, 255, 0.65);
   font-size: 20px;
   line-height: 1.166;
@@ -651,7 +651,7 @@ body {
   border: none;
 }
 
-.buy-form-subtitle-field input:placeholder {
+.buy-form-subtitle-field input.placeholder {
   font-size: 24px;
   line-height: 1.166;
   color: #fff;
