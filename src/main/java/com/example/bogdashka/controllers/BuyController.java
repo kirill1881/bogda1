@@ -1,5 +1,6 @@
 package com.example.bogdashka.controllers;
 
+import com.example.bogdashka.helper.Counter;
 import com.example.bogdashka.helper.Data1;
 import com.example.bogdashka.helper.Data2;
 import com.example.bogdashka.models.DataModel;
@@ -70,7 +71,7 @@ public class BuyController {
 
         amount = Double.parseDouble(robox);
         sum = amount/(course);
-        map.put(100, "https://payok.io/payment_link/f8944-3fth9-2lc7n");
+        /*map.put(100, "https://payok.io/payment_link/f8944-3fth9-2lc7n");
         map.put(150,  "https://payok.io/payment_link/t5174-6zeko-6v35l");
         map.put(200, "https://payok.io/payment_link/alk9r-3i5oe-cjz0c");
         map.put(250, "https://payok.io/payment_link/c5w43-ym18e-m744g");
@@ -100,29 +101,25 @@ public class BuyController {
             url = map.get(1000);
         }else {
         url = map.get((int) sum);
-        }
+        }*/
 
 
-        /*map.put(1, 100);
-        map.put(2, 130);
-        map.put(3, 200);
-        for (int i = 4, j = 250; i < 30; i++, j+=50) {
-            map.put(i, j);
-        }
-        String key = String.valueOf((sum/50+1));
-        String amount1 = String.valueOf(map.get((int)sum/50+1));
-        RedirectView redirectView = new RedirectView();
-*/
-        /*RedirectView redirectView = new RedirectView();
-        Payment payment = new Payment(username, String.valueOf(sum));
-        String str = payment.toString();
+        Payment payment = new Payment(username, Counter.getCount(), String.valueOf(sum));
+        System.out.println(payment);
+        String str1 = payment.toString();
         MessageDigest md =  MessageDigest.getInstance("MD5");
-        byte[] bytes = md.digest(str.getBytes(StandardCharsets.UTF_8));
+        byte[] bytes = md.digest(str1.getBytes(StandardCharsets.UTF_8));
         StringBuilder stringBuilder = new StringBuilder();
         for (byte b:bytes) {
             stringBuilder.append(String.format("%02X",b));
         }
-        String key = stringBuilder.toString();*/
+        String key = stringBuilder.toString().toLowerCase(Locale.ROOT);
+
+        url = "https://payok.io/pay?" + "amount=" + payment.getAmount()+
+                "&payment=" + payment.getPayment() + "&desc=" + payment.getDesc()
+                + "&shop=" + payment.getShop() + "&currency=" + payment.getCurrency()
+                + "&sign=" + key;
+        System.out.println(url);
 
         RedirectView redirectView = new RedirectView();
 
