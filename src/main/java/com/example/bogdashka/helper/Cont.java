@@ -1,0 +1,16 @@
+package com.example.bogdashka.helper;
+
+import lombok.Data;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "")
+@Data
+public class Cont {
+    @Id
+    private final Long id = Long.valueOf(1);
+
+    @Column
+    String count;
+}

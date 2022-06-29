@@ -1,9 +1,11 @@
 package com.example.bogdashka.controllers;
 
+import com.example.bogdashka.helper.Cont;
 import com.example.bogdashka.helper.Counter;
 import com.example.bogdashka.helper.Data1;
 import com.example.bogdashka.helper.Data2;
 import com.example.bogdashka.models.DataModel;
+import com.example.bogdashka.repos.CountRepo;
 import com.example.bogdashka.repos.DataRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.view.RedirectView;
 
-import javax.xml.crypto.Data;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -33,6 +34,9 @@ public class BuyController {
 
     @Autowired
     DataRepo dataRepo;
+
+    @Autowired
+    CountRepo countRepo;
 
     private String name = MainController.name;
 
@@ -104,7 +108,7 @@ public class BuyController {
         }*/
 
 
-        Payment payment = new Payment(username, Counter.getCount(), String.valueOf(sum));
+        Payment payment = new Payment(username,  countRepo.findAll().get(0).getCount(), String.valueOf(sum));
         System.out.println(payment);
         String str1 = payment.toString();
         MessageDigest md =  MessageDigest.getInstance("MD5");
@@ -122,6 +126,12 @@ public class BuyController {
         System.out.println(url);
 
         RedirectView redirectView = new RedirectView();
+
+        Cont cont = new Cont();
+        int c = Integer.parseInt(countRepo.findAll().get(0).getCount());
+        c++;
+        cont.setCount(String.valueOf(c));
+        countRepo.save(cont);
 
         redirectView.setUrl("/buy/byu-methods");
 
