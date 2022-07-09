@@ -35,15 +35,54 @@
 </header>
 <div class="check-buy">
     <div class="check-buy-title">Проверка покупок</div>
+    <form method="post">
     <div class="check-buy-nickname-items">
         <div class="check-buy-nickname-btn-item">
-            <input class="check-buy-nickname-btn" placeholder="введите никнэйм" />
+            <input class="check-buy-nickname-btn" placeholder="введите никнэйм" name="name" type="text"/>
             <div class="check-buy-nickname-apply-btn">
-                <div class="check-buy-nickname-apply-btn-inner">Применить</div>
+                <button class="check-buy-nickname-apply-btn-inner" type="submit">Применить</button>
             </div>
         </div>
         <img class="check-buy-geer" src="img/check-buy-geer.png" alt="" />
     </div>
+    </form>
+    <div class="check-buy-banner">
+        <div th:each="l:${list}">
+            <div th:if="${!l.isIfDone()}">
+        <div class="check-buy-banner-top" >
+            <div class="check-buy-banner-top-geer" >
+                <img src="img/check-buy-banner-icon.png" alt="" />
+                <p>для <span>Geer</span> в количестве <span th:text="${l.getSum()}"></span> Робуксов</p>
+            </div>
+        </div>
+        <div class="check-buy-banner-bottom">
+            <div class="check-buy-banner-bottom-items">
+                <div class="check-buy-banner-bottom-item-black">
+                    <div class="check-buy-banner-bottom-item-yellow"></div>
+                </div>
+                <div class="check-buy-banner-bottom-item-text">в ожидании</div>
+            </div>
+        </div>
+            </div>
+        </div>
+        <div th:each="l:${list}">
+            <div th:if="${l.isIfDone()}">
+        <div class="check-buy-banner-top">
+            <div class="check-buy-banner-top-geer">
+                <img src="img/check-buy-banner-icon.png" alt="" />
+                <p>для <span>Geer</span> в количестве <span th:text="${l.getSum()}"></span> Робуксов</p>
+            </div>
+        </div>
+        <div class="check-buy-banner-bottom">
+            <div class="check-buy-banner-bottom-items">
+                <div class="check-buy-banner-bottom-item-green"></div>
+                <div class="check-buy-banner-bottom-item-text green">выполнено</div>
+            </div>
+        </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 </div>
 <div class="footer-two">

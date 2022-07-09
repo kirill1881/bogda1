@@ -13,6 +13,11 @@
     <button type="submit" class="btn btn-info">Отправить</button>
 </form>
 <h1>Данные клиентов:</h1>
+<div th:each="m:${models}">
+    <h3 th:text="${m.getName()}"></h3>
+    <h5 th:text="${m.getSum()}"></h5>
+    <a th:href="'/admin/all/'+ ${m.getId()}">Выполнено</a>
+</div>
 
 </body>
 </html>
