@@ -67,4 +67,10 @@ public class AdminController {
         paymentRepo.save(paymentModel);
         return new RedirectView("/admin");
     }
+    @GetMapping("/ark")
+    public String getPage(Model model){
+        List<PaymentModel> list = paymentRepo.getPaymentModelsByIfDone(true);
+        model.addAttribute("models", list);
+        return "ark";
+    }
 }
