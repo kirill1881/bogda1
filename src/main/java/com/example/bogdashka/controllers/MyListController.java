@@ -32,6 +32,7 @@ public class MyListController {
     public RedirectView setList(@RequestParam String name){
         this.name = name;
         paymentModels = paymentRepo.getPaymentModelsByName(name);
+
         return new RedirectView("/mylist");
     }
 }
