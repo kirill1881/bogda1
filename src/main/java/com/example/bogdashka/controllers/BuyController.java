@@ -68,7 +68,7 @@ public class BuyController {
                 intRob = i;
         }
         String strRub, StrRob;
-        strRub = str.substring(1,indRub);
+        strRub = str.substring(0,indRub);
         StrRob = str.substring(indRub+2, intRob);
 
         int course = Integer.valueOf(StrRob)/Integer.valueOf(strRub);

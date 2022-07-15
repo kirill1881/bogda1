@@ -12,5 +12,5 @@ public class Cont {
     private final Long id = Long.valueOf(1);
 
     @Column
-    String count;
+    String count = "6000";
 }
