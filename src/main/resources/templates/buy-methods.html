@@ -234,7 +234,7 @@
           </div>-->
           <div class="buy-form-submit mob buy-logpass-btn">
             <div class="buy-form-submit-inner">
-
+              <img src="img/bag-icon.png" alt="" />
               Купить
             </div>
           </div>
@@ -295,7 +295,16 @@
             />
             <span class="error">Заполните поле</span>
           </div>
-
+          <div class="buy-form-eq-container">
+            <div class="buy-form-eq-field">
+              <img src="img/wallet-icon.png" alt="" />
+              <input
+                type="number"
+                class="rubbles-input"
+                placeholder="1&#8381;"
+              />
+              <span class="error">Заполните поле</span>
+            </div>
             <img class="buy-form-eq-icon" src="img/equal-icon.png" alt="" />
             <div class="buy-form-eq-field blue">
               <img src="img/union-icon.png" alt="" />
@@ -308,10 +317,10 @@
             </div>
           </div>
           <div class="buy-form-submit mob buy-transfer-btn">
-            <button class="buy-form-submit-inner">
-
+            <div class="buy-form-submit-inner">
+              <img src="img/bag-icon.png" alt="" />
               Купить
-            </button>
+            </div>
           </div>
         </div>
       </div>
@@ -319,7 +328,7 @@
         <div class="buy-form-submit-inner">Купить</div>
       </div>
     </div>
-    <form method="post" action="/buy" class="buy-form-3">
+    <div class="buy-form-3">
       <div class="buy-form">
         <div class="buy-form-hero-1">
           <img class="hero-img" src="img/hero1.png" alt="" />
@@ -386,36 +395,35 @@
             <div class="buy-form-eq-field">
               <img src="img/wallet-icon.png" alt="" />
               <input
-                type="text"
-                name="robox"
+                type="number"
                 class="rubbles-input"
                 placeholder="1&#8381;"
               />
               <span class="error">Заполните поле</span>
             </div>
             <img class="buy-form-eq-icon" src="img/equal-icon.png" alt="" />
-            <div class="buy-form-eq-field blue" th:each="d : ${list}">
+            <div class="buy-form-eq-field blue">
               <img src="img/union-icon.png" alt="" />
               <input
-                      type="text"
-                      name="username"
-                      th:value="${d.getName()}"
+                type="number"
+                class="robux-input"
+                placeholder="1.86 Р&#36;"
               />
               <span class="error">Заполните поле</span>
             </div>
           </div>
           <div class="buy-form-submit buy-logpass-btn mob">
-            <button type="submit" class="buy-form-submit-inner">
+            <div class="buy-form-submit-inner">
               <img src="img/bag-icon.png" alt="" />
               Купить
-            </button>
+            </div>
           </div>
         </div>
       </div>
       <div class="buy-form-submit buy-logpass-btn">
-        <button type="submit" class="buy-form-submit-inner">Купить</button>
+        <div class="buy-form-submit-inner">Купить</div>
       </div>
-    </form>
+    </div>
     <a data-fancybox="gallery" href="#paymethod" class="open-paymethod-btn"></a>
 
     <footer>
