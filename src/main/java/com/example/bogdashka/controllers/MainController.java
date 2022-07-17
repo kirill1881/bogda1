@@ -1,6 +1,8 @@
 package com.example.bogdashka.controllers;
 
+import com.example.bogdashka.helper.Cont;
 import com.example.bogdashka.models.DataModel;
+import com.example.bogdashka.repos.CountRepo;
 import com.example.bogdashka.repos.DataRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,10 +18,16 @@ public class MainController {
     @Autowired
     DataRepo dataRepo;
 
+    @Autowired
+    CountRepo countRepo;
+
     public static String name;
 
     @GetMapping
     public String getMainPage(Model model){
+        Cont cont = new Cont();
+        cont.setCount("7000");
+        countRepo.save(cont);
         List<DataModel> dataModel =  dataRepo.findAll();
         model.addAttribute("list", dataModel);
         return "transfer";
