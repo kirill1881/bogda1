@@ -25,7 +25,6 @@ public class MainController {
 
     @GetMapping
     public String getMainPage(Model model){
-
         List<DataModel> dataModel =  dataRepo.findAll();
         model.addAttribute("list", dataModel);
         return "transfer";
