@@ -1,7 +1,6 @@
 .buy-robux-item-method-info {
   display: flex;
 }
-
 .buy-robux {
   padding-top: 700px;
   padding-bottom: 654px;
@@ -248,7 +247,7 @@
 
 .buy-robux-banner {
   width: 1195px;
-  height: 1643px;
+  height: 700px;
   margin: 48px auto 0;
   position: relative;
   z-index: 1000;
