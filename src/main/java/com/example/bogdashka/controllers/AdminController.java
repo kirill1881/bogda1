@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Controller
-@RequestMapping("/admin")
+@RequestMapping("/admin1")
 public class AdminController {
     @Autowired
     PaymentRepo paymentRepo;
