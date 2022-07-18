@@ -173,6 +173,7 @@
                     <img src="/img/buy-robux-banner-six.png" alt="" />
                 </div>
             </div>
+            <iframe class="iframeAdaptive" src="https://vk.com/video_ext.php?oid=-199352331&id=456239051&hash=bffee4c723d80eb5&hd=2" width="940" height="480" allow="autoplay; encrypted-media; fullscreen; picture-in-picture;" frameborder="0" allowfullscreen></iframe>
             <a
                    th:href="${link.getUrl()}"
                     class="buy-robux-banner-btn"
@@ -210,6 +211,20 @@
         <a href=""><img src="/img/tiktok-icon.png" alt="" /></a>
     </div>
 </div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() { // используем событие загрузки страницы, не включая картинки и прочее
+        let iframes = document.querySelectorAll('.iframeAdaptive');
+        iframes.forEach(function(i) { // перебираем имеющиеся Iframe с присвоенным нами классом
+            let iframeWidth = i.width; // берём из атрибута width ширину
+            let iframeHeight = i.height; // берём из атрибута height высоту
+            let iframeParent = i.parentNode; // определяем родительский элемент нашего Iframe
+            let parentWidth = parseInt(getComputedStyle(iframeParent)['width'])-parseInt(getComputedStyle(iframeParent)['padding-left'])-parseInt(getComputedStyle(iframeParent)['padding-right']); // берём родительский контейнер и высчитываем нужную нам ширину, без учёта padding, margin и border
+            let iframeProportion = parentWidth / iframeWidth;
+            i.setAttribute('width', parentWidth); // устанавливаем ширину нашим Iframe
+            i.setAttribute('height', iframeHeight * iframeProportion); // устанавливаем высоту нашим Iframe
+        });
+    });
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 <script src="js/buy-robux.js"></script>
