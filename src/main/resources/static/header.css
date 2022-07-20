@@ -94,6 +94,7 @@ nav {
   }
   .logo a {
     font-size: 2.812vw;
+    font-family: Arial;
   }
   .logo img {
     width: 5.468vw;
@@ -131,6 +132,7 @@ nav {
   }
   .logo-mob {
     display: block;
+    font-family: "Arial";
   }
   .logo {
     margin-right: 0;
