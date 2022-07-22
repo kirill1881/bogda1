@@ -38,6 +38,7 @@ nav {
   line-height: 1.166;
   margin-right: 60px;
   transition: 0.2s;
+  cursor:pointer;
 }
 
 .menu li:last-child .menu-item {
@@ -47,6 +48,7 @@ nav {
 .menu-item:hover {
   opacity: 0.7;
   color: #808080;
+  cursor:pointer;
 }
 
 .button-red {
