@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:each="el:${list}">
+    <h3 th:text="${m.getName()}"></h3>
+    <h5 th:text="${m.getSum()}"></h5>
+</div>
+</body>
+</html>
