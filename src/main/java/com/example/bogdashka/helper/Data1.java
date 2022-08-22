@@ -9,4 +9,5 @@ public class Data1 {
     String freeRobux;
     String course;
     String name;
+    String oneRub;
 }
