@@ -154,7 +154,10 @@
           <div class="buy-form-subtitle-wrapper">
             <h3 class="buy-form-subtitle">
               <p>Покупка осуществляется через покупку вашего геймпаса.</p>
-              <p>КУРС 1 РУБЛЬ = 4 РОБУКСА (комисию покрываем)</p>
+              <p>КУРС 1 РУБЛЬ =
+              <p th:text="${list.get(0).getOneRub()}"></p>
+             РОБУКСА (комисию покрываем)</p>
+
             </h3>
             <div class="buy-form-subtitle-field">
               <input type="text" placeholder="Промокод(если есть)" />
