@@ -47,6 +47,14 @@ public class BuyController {
         data1.setCourse(dataModel.get(0).getCourse());
         data1.setFreeRobux(dataModel.get(0).getFreeRobux());
         data1.setName(MainController.name);
+        String course = data1.getCourse();
+        int in1 = course.indexOf('-');
+        int in2 = course.indexOf('R');
+        int ind3 = course.indexOf('₽');
+        String rub = course.substring(0, ind3);
+        String rob = course.substring(in1+1, in2);
+        String oneRub = String.valueOf(Math.round((Double.parseDouble(rob)/Double.valueOf(rub))));
+        data1.setOneRub(oneRub);
         model.addAttribute("list", Collections.singletonList(data1));
         return "buy-methods";
     }
@@ -59,6 +67,7 @@ public class BuyController {
         dataModel = list.get(0);
 
         String str = dataModel.getCourse();
+        str = str.replaceAll(" ", "");
         char[] ch = str.toCharArray();
         int indRub= 0 , intRob = 0, intSign = 0;
         for (int i = 0; i < ch.length; i++) {
