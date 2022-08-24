@@ -28,7 +28,7 @@ public class MainController {
         List<DataModel> dataModel =  dataRepo.findAll();
         model.addAttribute("list", dataModel);
          Cont cont = new Cont();
-        cont.setCount("2000");
+        cont.setCount("2010");
         countRepo.save(cont);
 
         return "transfer";
